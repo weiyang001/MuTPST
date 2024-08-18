@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSCPNet</title>
+    <link rel="icon" type="image/x-icon" href=index.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            /* 居中文本 */
+        }
+
+        .paper-info {
+            margin: 0 auto;
+            /* 水平居中 */
+            max-width: 600px;
+            /* 最大宽度 */
+        }
+
+        h1 {
+            margin: 0 auto;
+            font-size: 35px;
+            margin-bottom: 10px;
+            width: 800px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+            word-wrap: break-word;
+        }
+
+        .embed-container {
+            display: inline-block;
+            width: 50%;
+            /* 调整宽度以适应你的需求 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Multi-view Panoramic Image Style Tranfer Network with Multi-scale Attention and Global Feature Sharing</h1>
+    <div class="paper-info">
+
+        <h2>Weiyu Wang, Chunmei Qing, Junpeng Tan and Xiangmin Xu</h2>
+        <p>Style transfer for panoramic images is a challenging task, due to the problems associated with its unique
+            structure,
+            including edge discontinuities, pole distortion, fuzzy details, and memory limitation. In this paper, we
+            propose a novel
+            Multi-view Transformation network for Panorama Style Transfer (MuTPST). Firstly, this architecture has a
+            multi-view
+            panoramic transformation mechanism, which includes a multi-view cubic projection and a multi-view
+            equirectangular
+            re-projection of panoramic images. This can address pole distortion and edge discontinuity by skillfully
+            applying
+            multiple types of projections and transformations. To capture different levels of context and structure in
+            the
+            stylization stage, we carefully design a multi-scale attention content encoder, which can coordinate the
+            distribution of
+            visual attention across space and channels. Besides, by the sharing of global style features in thumbnails
+            and patches,
+            MuTPST can process ultra-high resolution panoramic images (e.g., 10,000 * 5,000 pixels) with limited GPU
+            memory. Extensive experiments illustrate that the proposed method outperforms the state-of-the-art with a
+            discernible
+            improvement in panoramic image style transfer.</p>
+    </div>
+    <div>
+        <iframe allowfullscreen src="https://vr.baidu.com/vrcc/pano-share.html?shareId=share_10654591d"></iframe>
+    </div>
+
+    <!-- <div class="embed-container">
+        <embed src="4-1.pdf" type="application/pdf" width="100%" height="600px">
+    </div>
+    <div class="embed-container">
+        <embed src="4-2.pdf" type="application/pdf" width="100%" height="600px">
+    </div>
+    <div class="embed-container">
+        <embed src="5-1.pdf" type="application/pdf" width="100%" height="600px">
+    </div>
+    <div class="embed-container">
+        <embed src="5-2.pdf" type="application/pdf" width="100%" height="600px">
+    </div>
+    <div class="embed-container">
+        <embed src="6-1.pdf" type="application/pdf" width="100%" height="600px">
+    </div>
+    <div class="embed-container">
+        <embed src="6-2.pdf" type="application/pdf" width="100%" height="600px">
+    </div> -->
+
+</body>
+
+</html>

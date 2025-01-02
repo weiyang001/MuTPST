@@ -18,6 +18,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
 
   gtag('config', 'G-066KB12YZ9');
+
+  const iframes = document.getElementsByTagName('iframe');
+    Array.from(iframes).forEach(iframe => {
+      iframe.onload = function() {
+        try {
+          const style = iframe.contentDocument.createElement('style');
+          style.textContent = `
+            .v3d-plg-n,
+            .v3d-plg-logo {
+              display: none !important;
+            }
+          `;
+          iframe.contentDocument.head.appendChild(style);
+        } catch(e) {
+          console.error('无法访问iframe内容:', e);
+        }
+      };
+    });
+
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

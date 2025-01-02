@@ -20,38 +20,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('config', 'G-066KB12YZ9');
 
   const iframes = document.getElementsByTagName('iframe');
-  // 监听iframe内容变化
-Array.from(iframes).forEach(iframe => {
-  iframe.onload = function() {
-    try {
-      const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-      
-      const observer = new MutationObserver((mutations) => {
-        mutations.forEach(() => {
-          // 移除类
-          const elementsWithPlgN = iframeDocument.getElementsByClassName('v3d-plg-n');
-          const elementsWithPlgLogo = iframeDocument.getElementsByClassName('v3d-plg-logo');
-          
-          Array.from(elementsWithPlgN).forEach(element => {
-            element.classList.remove('v3d-plg-n');
-          });
-          
-          Array.from(elementsWithPlgLogo).forEach(element => {
-            element.classList.remove('v3d-plg-logo');
-          });
-        });
-      });
 
-      // 配置观察选项
-      observer.observe(iframeDocument.body, {
-        childList: true,
-        subtree: true
-      });
-    } catch(e) {
-      console.error('无法访问iframe内容:', e);
-    }
-  };
-});
+    Array.from(iframes).forEach(iframe => {
+      iframe.onload = function() {
+        try {
+          const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+          
+          const observer = new MutationObserver((mutations) => {
+            mutations.forEach(() => {
+              // 设置透明度为0
+              const elementsWithPlgN = iframeDocument.getElementsByClassName('v3d-plg-n');
+              const elementsWithPlgLogo = iframeDocument.getElementsByClassName('v3d-plg-logo');
+              
+              Array.from(elementsWithPlgN).forEach(element => {
+                element.style.setProperty('opacity', '0', 'important');
+              });
+              
+              Array.from(elementsWithPlgLogo).forEach(element => {
+                element.style.setProperty('opacity', '0', 'important');
+              });
+            });
+          });
+    
+          // 配置观察选项
+          observer.observe(iframeDocument.body, {
+            childList: true,
+            subtree: true
+          });
+        } catch(e) {
+          console.error('无法访问iframe内容:', e);
+        }
+      };
+    });
+
 
 
 </script>
